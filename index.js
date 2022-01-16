@@ -11,7 +11,7 @@ class Zalo {
       try {
         const oauthCode = await RNZalo.login(verifier, code);
         return new Promise((resolve, reject) => {
-          RNZalo.getProfile(oauthCode, verifier, (data) => {
+          RNZalo.getProfile(oauthCode, (data) => {
             resolve({
               user: data,
               oauthCode,
